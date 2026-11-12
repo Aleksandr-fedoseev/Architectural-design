@@ -1,0 +1,70 @@
+@startuml ER diagram
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam dpi 160
+skinparam defaultFontName Arial
+skinparam class {
+  BackgroundColor #EEF3FF
+  BorderColor #3B5BDB
+  HeaderBackgroundColor #DBE4FF
+}
+
+entity "Сотрудник" as emp {
+  * id_сотрудника : INTEGER <<PK>>
+  --
+  * ФИО : VARCHAR(100)
+  * кабинет : VARCHAR(10)
+  * email : VARCHAR(100)
+  * роль : VARCHAR(20)
+}
+
+entity "ИТ-специалист" as spc {
+  * id_сотрудника : INTEGER <<PK, FK>>
+}
+
+entity "Заявка" as req {
+  * номер : INTEGER <<PK>>
+  --
+  * id_заявителя : INTEGER <<FK>>
+  id_исполнителя : INTEGER <<FK>>
+  * id_категории : INTEGER <<FK>>
+  * описание : TEXT
+  * статус : VARCHAR(20)
+  * время_подачи : DATETIME
+  * срок_ответа : DATETIME
+  время_закрытия : DATETIME
+  комментарий : TEXT
+}
+
+entity "Категория" as cat {
+  * id_категории : INTEGER <<PK>>
+  --
+  * название : VARCHAR(50)
+  * id_приоритета : INTEGER <<FK>>
+}
+
+entity "Приоритет" as pri {
+  * id_приоритета : INTEGER <<PK>>
+  --
+  * название : VARCHAR(20)
+  * нормативный_срок_ч : INTEGER
+}
+
+entity "Уведомление" as ntf {
+  * id_уведомления : INTEGER <<PK>>
+  --
+  * номер_заявки : INTEGER <<FK>>
+  * id_получателя : INTEGER <<FK>>
+  * текст : TEXT
+  * время_отправки : DATETIME
+}
+
+emp ||--o{ req : подаёт
+emp ||--o| spc : является
+spc |o--o{ req : выполняет
+req }o--|| cat : относится к
+cat }o--|| pri : определяется
+req ||--o{ ntf : порождает
+emp ||--o{ ntf : получает
+@enduml

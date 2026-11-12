@@ -1,0 +1,27 @@
+flowchart TB
+    EMP["<b>Сотрудник</b><br/>ФИО, кабинет, email"]
+    APP["<b>Заявитель</b>"]
+    SPC["<b>ИТ-специалист</b><br/>занятость"]
+    DSP["<b>Диспетчер</b>"]
+    REQ["<b>Заявка</b><br/>номер, описание,<br/>статус, время подачи,<br/>срок ответа,<br/>время закрытия,<br/>комментарий"]
+    CAT["<b>Категория</b><br/>название"]
+    PRI["<b>Приоритет</b><br/>название,<br/>нормативный срок"]
+    NTF["<b>Уведомление</b><br/>текст,<br/>время отправки"]
+
+    EMP ~~~ APP & SPC & DSP
+    APP -.->|является| EMP
+    SPC -.->|является| EMP
+    DSP -.->|является| EMP
+
+    APP -->|подаёт| REQ
+    SPC -->|выполняет| REQ
+    DSP -->|перераспределяет| REQ
+    REQ -->|относится к| CAT
+    CAT -->|определяет| PRI
+    REQ -->|порождает| NTF
+    NTF -->|адресовано| EMP
+
+    classDef c fill:#eef3ff,stroke:#3b5bdb,color:#000
+    classDef core fill:#fff3bf,stroke:#e67700,stroke-width:2px,color:#000
+    class EMP,APP,DSP,SPC,CAT,PRI,NTF c
+    class REQ core

@@ -1,0 +1,252 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Страница-1" id="Uxc8fVTyUQ4hZ7F2nGzU">
+    <mxGraphModel dx="1334" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool_tobe" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;whiteSpace=wrap;" value="Внутренняя ИТ- служба (TO BE)" vertex="1">
+          <mxGeometry height="580" width="2060" x="170" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_appl" parent="pool_tobe" style="swimlane;html=1;startSize=20;horizontal=0;" value="Заявитель" vertex="1">
+          <mxGeometry height="130" width="2040" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t_start" parent="lane_appl" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;" value="Появилась&lt;div&gt;проблема&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="40" y="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="t_submit" parent="lane_appl" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;" value="Подать заявку&lt;div&gt;через портал&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="115" x="130" y="31.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_fix" parent="lane_appl" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;" value="Дополнить&lt;div&gt;заявку&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="110" x="305" y="31.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_gw_res" parent="lane_appl" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="1660" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gw_res" parent="lane_appl" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Проблема&amp;nbsp;&lt;div&gt;решена?&lt;/div&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="1645" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="e_start_sub" edge="1" parent="lane_appl" source="t_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_submit" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_disp" parent="pool_tobe" style="swimlane;html=1;startSize=20;horizontal=0;" value="Диспетчер" vertex="1">
+          <mxGeometry height="140" width="2040" x="20" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="t_disp_reassign" parent="lane_disp" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;" value="Перераспределить&lt;div&gt;задачи и назначить&lt;/div&gt;&lt;div&gt;специалиста&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="145" x="1020" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gw_fix" edge="1" parent="pool_tobe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="560" />
+              <mxPoint x="380" y="215" />
+            </Array>
+            <mxPoint x="379.9999999999998" y="499.9999999999998" as="sourcePoint" />
+            <mxPoint x="379.9999999999998" y="98.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_gw_fix" parent="e_gw_fix" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Нет&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lane_spec" parent="pool_tobe" style="swimlane;html=1;startSize=20;horizontal=0;" value="ИТ- специалист" vertex="1">
+          <mxGeometry height="140" width="2040" x="20" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="t_tech_work" parent="lane_spec" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;" value="Выполнить&lt;div&gt;работу&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="115" x="1260" y="36.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_tech_done" parent="lane_spec" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;" value="Отметить&lt;div&gt;выполнение&lt;/div&gt;&lt;div&gt;работы&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="115" x="1440" y="36.25" as="geometry" />
+        </mxCell>
+        <mxCell id="e_work_done" edge="1" parent="lane_spec" source="t_tech_work" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_tech_done" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_sys" parent="pool_tobe" style="swimlane;html=1;startSize=20;horizontal=0;" value="Система" vertex="1">
+          <mxGeometry height="170" width="2040" x="20" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="t_gw_filled" parent="lane_sys" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="335" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gw_filled" parent="lane_sys" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Заявка&lt;div&gt;заполнена?&lt;/div&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="320" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_reg" parent="lane_sys" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;" value="Зарегистрировать&lt;div&gt;заявку и определить&lt;/div&gt;&lt;div&gt;приоритет&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="140" x="450" y="51.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_find" parent="lane_sys" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;" value="Найти и назначить&lt;div&gt;специалиста&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="130" x="640" y="51.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_gw_found" parent="lane_sys" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="820" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gw_found" parent="lane_sys" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Специалист&lt;div&gt;найден?&lt;/div&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="805" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_gw_prio" parent="lane_sys" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="930" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gw_prio" parent="lane_sys" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Приоритет&lt;div&gt;критичный?&lt;/div&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="915" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_queue" parent="lane_sys" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;" value="Поставить заявку&lt;div&gt;в очередь ожидания&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="130" x="1030" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t_end_queue" parent="lane_sys" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=general;" value="Заявка&lt;div&gt;в очереди&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="40" x="1205" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_notify" parent="lane_sys" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;" value="Уведомить&lt;div&gt;заявителя о&lt;/div&gt;&lt;div&gt;завершении&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="125" x="1435" y="51.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sys_close" parent="lane_sys" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;" value="Закрыть&lt;div&gt;заявку&lt;/div&gt;" vertex="1">
+          <mxGeometry height="67.5" width="115" x="1780" y="51.25" as="geometry" />
+        </mxCell>
+        <mxCell id="t_end_closed" parent="lane_sys" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" value="Заявка&amp;nbsp;&lt;div&gt;закрыта&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="50" x="1950" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gw_reg" edge="1" parent="lane_sys" source="t_gw_filled" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_sys_reg" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_e_gw_reg" parent="e_gw_reg" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Да&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_reg_find" edge="1" parent="lane_sys" source="t_sys_reg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_sys_find" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_find_gw" edge="1" parent="lane_sys" source="t_sys_find" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_gw_found" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_found_prio" edge="1" parent="lane_sys" source="t_gw_found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_gw_prio" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_e_found_prio" parent="e_found_prio" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Нет&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_prio_queue" edge="1" parent="lane_sys" source="t_gw_prio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_sys_queue" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="955" y="130" />
+              <mxPoint x="1030" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_prio_queue" parent="e_prio_queue" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Нет&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_queue_end" edge="1" parent="lane_sys" source="t_sys_queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_end_queue" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_close_end" edge="1" parent="lane_sys" source="t_sys_close" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_end_closed" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sub_gw" edge="1" parent="pool_tobe" source="t_submit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_gw_filled" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fix_gw" edge="1" parent="pool_tobe" source="t_fix" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_gw_filled" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="215" />
+              <mxPoint x="160" y="215" />
+              <mxPoint x="160" y="560" />
+              <mxPoint x="380" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_found_work" edge="1" parent="pool_tobe" source="t_gw_found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_tech_work" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="845" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_found_work" parent="e_found_work" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Да&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_prio_disp" edge="1" parent="pool_tobe" source="t_gw_prio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_disp_reassign" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="955" y="320" />
+              <mxPoint x="1090" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_prio_disp" parent="e_prio_disp" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Да&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_disp_work" edge="1" parent="pool_tobe" source="t_disp_reassign" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_tech_work" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1165" y="320" />
+              <mxPoint x="1315" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_done_notify" edge="1" parent="pool_tobe" source="t_tech_done" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_sys_notify" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_notify_res" edge="1" parent="pool_tobe" source="t_sys_notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_gw_res" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1500" y="560" />
+              <mxPoint x="1685" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_res_rework" edge="1" parent="pool_tobe" source="t_gw_res" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_tech_work" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1685" y="275" />
+              <mxPoint x="1315" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_res_rework" parent="e_res_rework" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Нет,&lt;br&gt;доработать&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-25" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_res_close" edge="1" parent="pool_tobe" source="t_gw_res" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="t_sys_close" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1740" y="215" />
+              <mxPoint x="1835" y="215" />
+              <mxPoint x="1835" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_e_res_close" parent="e_res_close" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Да&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a1_brk" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="380" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="a1_txt" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Заявитель сам заполняет форму на портале, а система проверяет обязательные поля — исключены ошибки фиксации со слов диспетчером&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="310" x="400" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="a1_line" edge="1" parent="1" source="t_gw_filled" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" target="a1_brk" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2_brk" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="850" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="a2_txt" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Занятость специалистов фиксируется в системе — назначение автоматическое. Диспетчер вмешивается только при нехватке ресурсов на критичные задачи&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="330" x="880" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="a2_line" edge="1" parent="1" source="t_gw_found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" target="a2_brk" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
